@@ -1,2 +1,2 @@
 # fit_tasty
-naredil repozitorij
+naredil repozitorij 1
