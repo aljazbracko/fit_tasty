@@ -1,2 +1,2 @@
 # fit_tasty
-naredil repozitor
+naredil repozito
