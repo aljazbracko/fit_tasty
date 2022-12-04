@@ -12,7 +12,7 @@ public class Profil {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long idProfil;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idUporabnik")
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore

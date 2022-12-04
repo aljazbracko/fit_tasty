@@ -15,16 +15,16 @@ public class Uporabnik {
 	private Long idUporabnik;
 
 	@OneToMany(mappedBy = "uporabnik",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private ArrayList<Recept> recept;
+	private List<Recept> recept;
 
 	@OneToMany(mappedBy = "uporabnik",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private ArrayList<Vsecek> vseckaniRecepti;
+	private List<Vsecek> vseckaniRecepti;
 
 	@OneToMany(mappedBy = "uporabnik",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private ArrayList<Komentar> objavljeniKomentarji;
+	private List<Komentar> objavljeniKomentarji;
 
 	@OneToMany(mappedBy = "uporabnik",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private ArrayList<Vprasanje> vprasanje;
+	private List<Vprasanje> vprasanje;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idOdgovor")
@@ -32,7 +32,7 @@ public class Uporabnik {
 	@JsonIgnore
 	private Odgovor odgovor;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idProfil")
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
@@ -65,35 +65,35 @@ public class Uporabnik {
 		this.idUporabnik = idUporabnik;
 	}
 
-	public ArrayList<Recept> getRecept() {
+	public List<Recept> getRecept() {
 		return recept;
 	}
 
-	public void setRecept(ArrayList<Recept> recept) {
+	public void setRecept(List<Recept> recept) {
 		this.recept = recept;
 	}
 
-	public ArrayList<Vsecek> getVseckaniRecepti() {
+	public List<Vsecek> getVseckaniRecepti() {
 		return vseckaniRecepti;
 	}
 
-	public void setVseckaniRecepti(ArrayList<Vsecek> vseckaniRecepti) {
+	public void setVseckaniRecepti(List<Vsecek> vseckaniRecepti) {
 		this.vseckaniRecepti = vseckaniRecepti;
 	}
 
-	public ArrayList<Komentar> getObjavljeniKomentarji() {
+	public List<Komentar> getObjavljeniKomentarji() {
 		return objavljeniKomentarji;
 	}
 
-	public void setObjavljeniKomentarji(ArrayList<Komentar> objavljeniKomentarji) {
+	public void setObjavljeniKomentarji(List<Komentar> objavljeniKomentarji) {
 		this.objavljeniKomentarji = objavljeniKomentarji;
 	}
 
-	public ArrayList<Vprasanje> getVprasanje() {
+	public List<Vprasanje> getVprasanje() {
 		return vprasanje;
 	}
 
-	public void setVprasanje(ArrayList<Vprasanje> vprasanje) {
+	public void setVprasanje(List<Vprasanje> vprasanje) {
 		this.vprasanje = vprasanje;
 	}
 

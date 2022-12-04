@@ -16,15 +16,7 @@ public class Specialist extends Uporabnik {
 
 	private String naziv;
 
-	@Override
-	public ArrayList<Vprasanje> getVprasanje() {
-		return vprasanje;
-	}
 
-	@Override
-	public void setVprasanje(ArrayList<Vprasanje> vprasanje) {
-		this.vprasanje = vprasanje;
-	}
 
 	public void setOdgovor(ArrayList<Odgovor> odgovor) {
 		this.odgovor = odgovor;

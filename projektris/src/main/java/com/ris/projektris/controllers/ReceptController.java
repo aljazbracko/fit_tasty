@@ -56,4 +56,9 @@ public class ReceptController{
     public Iterable<Recept> isciKalorijeOsebeCasVec(@PathVariable(name="kalorije") int kalorije, @PathVariable(name="stOseb") int stOseb,@PathVariable(name="cas") int cas){
         return receptDao.findBykalorijeosebecasVec(kalorije,stOseb,cas);
     }
+
+    @GetMapping("/isciKalorijeOsebe/{kalorije}/{stOseb}")
+    public Iterable<Recept> isciKalorijeOsebe(@PathVariable(name="kalorije") int kalorije, @PathVariable(name="stOseb") int stOseb){
+        return receptDao.findBykalorijeosebe(kalorije, stOseb);
+    }
 }
