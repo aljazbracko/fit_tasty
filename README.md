@@ -1,2 +1,2 @@
 # fit_tasty
-naredil repozito
+naredil repozi
