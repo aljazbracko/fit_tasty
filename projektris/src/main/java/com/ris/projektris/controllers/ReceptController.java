@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -60,5 +61,10 @@ public class ReceptController{
     @GetMapping("/isciKalorijeOsebe/{kalorije}/{stOseb}")
     public Iterable<Recept> isciKalorijeOsebe(@PathVariable(name="kalorije") int kalorije, @PathVariable(name="stOseb") int stOseb){
         return receptDao.findBykalorijeosebe(kalorije, stOseb);
+    }
+
+    @GetMapping("/vrniRecepteGledeNaSteviloKomentarjev/{stKomentarjev}")
+    public List<Recept> vrniRecepteSteviloKomentarjev(@PathVariable(name="stKomentarjev") int stKomentarjev){
+        return receptDao.vrniRecepteGledeNaSteviloKomentarjev(stKomentarjev);
     }
 }

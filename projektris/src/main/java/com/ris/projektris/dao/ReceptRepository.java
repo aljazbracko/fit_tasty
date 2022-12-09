@@ -22,6 +22,7 @@ public interface ReceptRepository extends CrudRepository<Recept,Long> {
     @Query("SELECT r FROM Recept r WHERE r.steviloKalorij = :kalorije AND r.steviloOseb = :osebe")
     public Iterable<Recept> findBykalorijeosebe(@Param("kalorije") int kalorije,@Param("osebe") int osebe);
 
-
+    @Query("SELECT r FROM Recept r, Komentar k WHERE k.recept = r GROUP BY r HAVING COUNT( k.recept) > :stKomentarjev")
+    public List<Recept> vrniRecepteGledeNaSteviloKomentarjev(@Param("stKomentarjev") int stKomentarjev);
 
 }
