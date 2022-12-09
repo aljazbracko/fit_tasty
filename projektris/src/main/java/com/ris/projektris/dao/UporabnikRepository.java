@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface UporabnikRepository extends CrudRepository<Uporabnik,Long> {
 
 
@@ -12,4 +14,7 @@ public interface UporabnikRepository extends CrudRepository<Uporabnik,Long> {
     public Iterable<Uporabnik> findBykalorijeosebecas(@Param("kalorije") int kalorije, @Param("osebe") int osebe, @Param("cas") int cas);
 
     */
+
+    @Query("select u from Uporabnik u, Recept r where r.uporabnik = u and r.steviloOseb = :steviloOseb")
+    public Optional<Uporabnik> vrniUporabnikeGledeNaSteviloOsebRecepta(@Param("steviloOseb") int stOseb);
 }

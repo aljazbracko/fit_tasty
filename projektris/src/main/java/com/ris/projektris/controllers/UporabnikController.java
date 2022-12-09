@@ -61,5 +61,11 @@ public class UporabnikController {
 
      */
 
+    //sprint2
+    @GetMapping("/uporabnikGledeNaSteviloOsebRecepta/{steviloOseb}")
+    public Optional<Uporabnik> uporabnikGledeNaSteviloOsebRecepta(@PathVariable(name="steviloOseb") int stOseb){
+        return uporabnikDao.vrniUporabnikeGledeNaSteviloOsebRecepta(stOseb);
+    }
+
 }
 
