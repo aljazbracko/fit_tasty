@@ -67,4 +67,12 @@ public class ReceptController{
     public List<Recept> vrniRecepteSteviloKomentarjev(@PathVariable(name="stKomentarjev") int stKomentarjev){
         return receptDao.vrniRecepteGledeNaSteviloKomentarjev(stKomentarjev);
     }
+
+    @GetMapping("/vrniRecepteGledeNaSteviloVseckov/{stVseckov}")
+    public List<Recept> vrniRecepteSteviloVseckov(@PathVariable(name="stVseckov") int stVseckov){
+        return receptDao.vrniRecepteGledeNaSteviloVseckov(stVseckov);
+    }
+
+
+
 }

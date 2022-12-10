@@ -17,4 +17,7 @@ public interface UporabnikRepository extends CrudRepository<Uporabnik,Long> {
 
     @Query("select u from Uporabnik u, Recept r where r.uporabnik = u and r.steviloOseb = :steviloOseb")
     public Iterable<Uporabnik> vrniUporabnikeGledeNaSteviloOsebRecepta(@Param("steviloOseb") int stOseb);
+
+    @Query("select u from Uporabnik u, Recept r where r.uporabnik = u and r.casKuhanja > :casKuhanja")
+    public Iterable<Uporabnik> vrniUporabnikeGledeNaCasKuhanjaRecepta(@Param("casKuhanja") int stOseb);
 }

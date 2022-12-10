@@ -25,4 +25,7 @@ public interface ReceptRepository extends CrudRepository<Recept,Long> {
     @Query("SELECT r FROM Recept r, Komentar k WHERE k.recept = r GROUP BY r HAVING COUNT( k.recept) > :stKomentarjev")
     public List<Recept> vrniRecepteGledeNaSteviloKomentarjev(@Param("stKomentarjev") int stKomentarjev);
 
+    @Query("SELECT r FROM Recept r, Vsecek v WHERE v.recept = r GROUP BY r HAVING COUNT( v.recept) > :stVseckov")
+    public List<Recept> vrniRecepteGledeNaSteviloVseckov(@Param("stVseckov") int stVseckov);
+
 }

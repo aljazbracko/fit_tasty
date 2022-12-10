@@ -67,5 +67,10 @@ public class UporabnikController {
         return uporabnikDao.vrniUporabnikeGledeNaSteviloOsebRecepta(stOseb);
     }
 
+
+    @GetMapping("/uporabnikGledeNaCasKuhanjaRecepta/{casKuhanja}")
+    public Iterable<Uporabnik> uporabnikGledeNaCasKuhanjaRecepta(@PathVariable(name="casKuhanja") int casKuhanja){
+        return uporabnikDao.vrniUporabnikeGledeNaCasKuhanjaRecepta(casKuhanja);
+    }
 }
 

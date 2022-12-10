@@ -38,4 +38,10 @@ public class ProfilController {
     }
 
 
+    @PutMapping("/spremeni")
+        public Optional<Profil> spremeniProfil(@RequestBody Profil profil){
+        profilDao.save(profil);
+        return profilDao.findById(profil.getIdProfil());
+    }
+
 }
