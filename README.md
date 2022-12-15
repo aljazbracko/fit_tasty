@@ -1,3 +1,3 @@
 # fit_tasty
-naredil repozittttt
+naredil repozit
 https://www.youtube.com/watch?v=xc4uOzlndAk&t=6627s
