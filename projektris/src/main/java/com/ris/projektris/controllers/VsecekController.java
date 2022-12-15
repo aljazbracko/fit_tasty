@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import com.ris.projektris.models.Vsecek;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/vsecek")
 public class VsecekController {
