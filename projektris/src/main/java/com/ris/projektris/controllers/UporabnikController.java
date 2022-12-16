@@ -32,7 +32,13 @@ public class UporabnikController {
 
     @PostMapping("/dodaj")
     public Uporabnik dodajUporabnika(@RequestBody Uporabnik uporabnik){
-        return uporabnikDao.save(uporabnik);
+        boolean obstaja = uporabnikDao.existsByUporabniskoIme(uporabnik.getUporabniskoIme());
+        System.out.println(obstaja);
+        if(!obstaja){
+            return uporabnikDao.save(uporabnik);
+        }
+        return null;
+
     }
 
     @DeleteMapping("/izbrisi/{id}")
@@ -72,6 +78,18 @@ public class UporabnikController {
     @GetMapping("/uporabnikGledeNaCasKuhanjaRecepta/{casKuhanja}")
     public Iterable<Uporabnik> uporabnikGledeNaCasKuhanjaRecepta(@PathVariable(name="casKuhanja") int casKuhanja){
         return uporabnikDao.vrniUporabnikeGledeNaCasKuhanjaRecepta(casKuhanja);
+    }
+
+    @PostMapping("/prijava")
+    public Uporabnik prijavaUporabnik(@RequestBody Uporabnik uporabnik){
+        Iterable uporabniki = uporabnikDao.findAll();
+        for(Object u : uporabniki){
+            Uporabnik vmesni = (Uporabnik)u;
+            if(vmesni.getUporabniskoIme().equals(uporabnik.getUporabniskoIme()) && vmesni.getGeslo().equals(uporabnik.getGeslo())){
+                return vmesni;
+            }
+        }
+        return null;
     }
 }
 

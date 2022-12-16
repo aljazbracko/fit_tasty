@@ -11,6 +11,8 @@ export default function EnRecept(){
         api.get("/recept/"+parametri.id).then((result) => {
             setRecept(result.data);
             console.log(result.data);
+            document.getElementById("prijava").style.display = "none";
+            document.getElementById("registracija").style.display = "none";
         })
     },[]);
 
