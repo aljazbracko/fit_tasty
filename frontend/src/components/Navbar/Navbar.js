@@ -40,7 +40,7 @@ export default function Navbar() {
             FIT&TASTY
           </Typography>
           <p id="uporabnik"></p>
-          <Button onClick={pojdiNaPrijavo} color="inherit" id="prijava">Prijava</Button>
+          <Button onClick={pojdiNaPrijavo} color="inherit" id="prijava">Prijava</Button> 
           <Button onClick={pojdiNaRegistracijo} color="inherit" id="registracija">Registracija</Button>
           <Button onClick={logout} color="inherit" id="logout">LogOut</Button>
         </Toolbar>

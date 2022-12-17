@@ -82,7 +82,7 @@ public class UporabnikController {
 
     @PostMapping("/prijava")
     public Uporabnik prijavaUporabnik(@RequestBody Uporabnik uporabnik){
-        Iterable uporabniki = uporabnikDao.findAll();
+        Iterable<Uporabnik> uporabniki = uporabnikDao.findAll();
         for(Object u : uporabniki){
             Uporabnik vmesni = (Uporabnik)u;
             if(vmesni.getUporabniskoIme().equals(uporabnik.getUporabniskoIme()) && vmesni.getGeslo().equals(uporabnik.getGeslo())){

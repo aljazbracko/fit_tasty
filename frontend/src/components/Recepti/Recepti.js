@@ -17,12 +17,12 @@ export default function Recepti(){
     return(
         <>
         <h1>RECEPTI</h1>
-        <Box sx={{width:'80%', maxwidth:360, bgcolor:'background.paper'}}>
+        <Box sx={{width:'80%', maxwidth:360, bgcolor:'background.paper',margin:"auto"}}>
             <nav aria-label="main mailbox folders">
                 <List>
         {
             recepti.map((recept) => (
-                <ListItem key={recept.idRecept}>
+                <ListItem key={recept.idRecept} sx={{border:"1px solid gray"}}>
                     <ListItemButton to={"/enRecept/"+recept.idRecept}>
                         <p>{recept.ime} <br></br>- {recept.opis}</p>
                     </ListItemButton>

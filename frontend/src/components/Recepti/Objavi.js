@@ -29,7 +29,8 @@ export default function Objavi(){
         <>
             <h1>OBJAVI RECEPT</h1>
             <TextField value={ime} onChange={(event) => setIme(event.target.value)} label="ime"/> <br/><br/> 
-            <textarea value={opis} onChange={(event) => setOpis(event.target.value)} label="opis" rows={5} cols={10}/>
+            <label for="opis">Opis</label> <br/>
+            <textarea value={opis} onChange={(event) => setOpis(event.target.value)} label="opis" rows={5} cols={30} id="opis"/>
              <br/><br/>
             <TextField value={casKuhanja} onChange={(event) => setCasKuhanja(event.target.value)} label="casKuhanja" /> <br/><br/>
             <TextField value={steviloKalorij} onChange={(event) => setSteviloKalorij(event.target.value)} label="steviloKalorij"/> <br/><br/>
